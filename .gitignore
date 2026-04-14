@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+.env*
+!.env.example
+pnpm-lock.yaml
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+\n# Private Docs\nFRONTEND_STYLE.md\nPROJECT.md
