@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { LayoutGrid, BookOpen, FileText, User, LogOut, Settings, CreditCard } from "lucide-react";
+import { LayoutGrid, BookOpen, FileText, User, LogOut, Settings, CreditCard, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,7 +21,8 @@ const navItems = [
 export function Navbar({ className }: { className?: string }) {
   const pathname = usePathname();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const actionsRef = useRef<HTMLDivElement>(null);
   
   const isAuthPage = pathname === "/login" || pathname === "/register";
   const isHomePage = pathname === "/";
@@ -30,8 +31,9 @@ export function Navbar({ className }: { className?: string }) {
   // Handle clicking outside to close the menu
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (actionsRef.current && !actionsRef.current.contains(event.target as Node)) {
         setIsUserMenuOpen(false);
+        setIsMobileMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -90,7 +92,7 @@ export function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Right: Actions */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3" ref={actionsRef}>
         {!isLoggedIn ? (
           <>
             <div className="hidden sm:flex items-center gap-2">
@@ -99,9 +101,30 @@ export function Navbar({ className }: { className?: string }) {
             </div>
             <div className="h-4 w-px bg-border/60 mx-1 hidden sm:block" />
             <ThemeToggle />
+            <button
+              aria-expanded={isMobileMenuOpen}
+              aria-label="Toggle navigation menu"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border/40 bg-background/50 shadow-sm backdrop-blur-sm transition-colors hover:bg-muted/70 lg:hidden"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              type="button"
+            >
+              <Menu className="h-4.5 w-4.5 text-muted-foreground" />
+            </button>
           </>
         ) : (
-          <div className="flex items-center gap-3" ref={menuRef}>
+          <div className="flex items-center gap-3">
+            <button
+              aria-expanded={isMobileMenuOpen}
+              aria-label="Toggle navigation menu"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border/40 bg-background/50 shadow-sm backdrop-blur-sm transition-colors hover:bg-muted/70 lg:hidden"
+              onClick={() => {
+                setIsUserMenuOpen(false);
+                setIsMobileMenuOpen((open) => !open);
+              }}
+              type="button"
+            >
+              <Menu className="h-4.5 w-4.5 text-muted-foreground" />
+            </button>
             <ThemeToggle />
             
             <div className="h-4 w-px bg-border/60 mx-1" />
@@ -109,7 +132,10 @@ export function Navbar({ className }: { className?: string }) {
             {/* User Profile at the very right */}
             <div className="relative">
               <button 
-                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsUserMenuOpen(!isUserMenuOpen);
+                }}
                 className={cn(
                   "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-200 shadow-sm",
                   isUserMenuOpen 
@@ -161,6 +187,57 @@ export function Navbar({ className }: { className?: string }) {
                 </div>
               )}
             </div>
+          </div>
+        )}
+
+        {isMobileMenuOpen && (
+          <div className="absolute right-2 top-[calc(100%+0.75rem)] z-50 w-[min(22rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-border/60 bg-background/92 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 lg:hidden">
+            <div className="border-b border-border/40 px-4 py-3">
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+                Navigation
+              </p>
+            </div>
+            <div className="p-2">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname.startsWith(item.href);
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground/85 hover:bg-muted/60"
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+            {!isLoggedIn && (
+              <div className="border-t border-border/40 p-2">
+                <Link
+                  className="flex items-center rounded-xl px-3 py-3 text-sm font-medium text-foreground/85 transition-colors hover:bg-muted/60"
+                  href="/login"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  登录
+                </Link>
+                <Link
+                  className="mt-1 flex items-center rounded-xl bg-primary px-3 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                  href="/register"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  注册
+                </Link>
+              </div>
+            )}
           </div>
         )}
       </div>
