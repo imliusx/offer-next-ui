@@ -53,7 +53,16 @@ export function Navbar({ className }: { className?: string }) {
       <div className="flex items-center">
         <Link href="/" className="flex min-w-0 items-center gap-3 group">
           <BrandMark className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105" priority />
-          <BrandWordmark className="truncate text-[1.65rem] text-foreground/80" />
+          <div className="flex min-w-0 items-center gap-2.5">
+            <BrandWordmark className="truncate text-[1.45rem] text-foreground/80" />
+            <span className="hidden items-center gap-1.5 rounded-full border border-border/30 bg-background/35 px-2 py-0.5 text-[0.62rem] font-normal tracking-[0.06em] text-muted-foreground/80 shadow-sm backdrop-blur-sm xl:inline-flex">
+              <span className="relative flex h-1.5 w-1.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              </span>
+              你的一站式面试备战平台
+            </span>
+          </div>
         </Link>
       </div>
       

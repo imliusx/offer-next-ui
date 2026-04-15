@@ -48,9 +48,9 @@ export default function Home() {
           </div>
 
           <h1 className="grid gap-2 text-4xl font-extrabold tracking-tight sm:gap-3 sm:text-6xl">
-            <span>你的面试准备</span>
+            <span>你的面试准备超级大脑</span>
             <SectionWordmark className="text-3xl text-muted-foreground sm:text-5xl">
-              Interview Prep
+              Interview Super Brain
             </SectionWordmark>
           </h1>
 

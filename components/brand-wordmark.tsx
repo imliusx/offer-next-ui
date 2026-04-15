@@ -8,7 +8,7 @@ export function BrandWordmark({className}: BrandWordmarkProps) {
   return (
     <span
       className={cn(
-        "font-brand-wordmark inline-block font-light leading-[0.9] tracking-[0.12em] antialiased text-foreground/80",
+        "font-brand-wordmark inline-block font-medium leading-[0.9] tracking-[0.12em] antialiased text-foreground/80",
         className
       )}
     >

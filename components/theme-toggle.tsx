@@ -19,10 +19,10 @@ export function ThemeToggle() {
     return (
       <Button
         aria-label="Toggle theme"
-        className="rounded-full border-border/70 bg-background/50 backdrop-blur-sm"
+        className="rounded-full border-0 bg-background/50 shadow-none backdrop-blur-sm hover:bg-background/70"
         size="icon"
         type="button"
-        variant="outline"
+        variant="ghost"
       >
         <Sun className="h-4 w-4" />
       </Button>
@@ -34,11 +34,11 @@ export function ThemeToggle() {
   return (
     <Button
       aria-label="Toggle theme"
-      className="rounded-full border-border/70 bg-background/50 backdrop-blur-sm"
+      className="rounded-full border-0 bg-background/50 shadow-none backdrop-blur-sm hover:bg-background/70"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       size="icon"
       type="button"
-      variant="outline"
+      variant="ghost"
     >
       <Sun
         className={cn(

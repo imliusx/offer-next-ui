@@ -23,10 +23,10 @@ import { CornerPlus } from "@/components/ui/corner-plus";
 const menuItems = [
   { label: "概览", href: "/workspace", icon: LayoutDashboard },
   { label: "计划安排", href: "/workspace/schedule", icon: Calendar },
-  { label: "简历优化", href: "/workspace/resume", icon: FileText },
+  { label: "简历制作", href: "/workspace/resume", icon: FileText },
   { label: "刷题进度", href: "/workspace/questions", icon: BookOpen },
   { label: "项目复盘", href: "/workspace/project-review", icon: History },
-  { label: "HR 面准备", href: "/workspace/hr-prep", icon: MessageSquare },
+  { label: "HR 面试", href: "/workspace/hr-prep", icon: MessageSquare },
   { label: "个人中心", href: "/workspace/profile", icon: User },
 ];
 
