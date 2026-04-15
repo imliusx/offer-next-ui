@@ -1,7 +1,9 @@
 import { Briefcase, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants, Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function RegisterPage() {
   return (
@@ -14,7 +16,7 @@ export default function RegisterPage() {
         返回首页
       </Link>
 
-      <Card className="w-full max-w-md bg-card/50 backdrop-blur-xl border-border/60 shadow-2xl">
+      <Card className="w-full max-w-md bg-card/50 backdrop-blur-xl border-border/60 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
             <Briefcase className="h-6 w-6" />
@@ -24,26 +26,25 @@ export default function RegisterPage() {
             <CardDescription>创建一个 Offer Next 账号</CardDescription>
           </div>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <div className="h-10 w-full rounded-md border border-border bg-background/50 px-3 py-2 text-sm text-muted-foreground">
-              全名 (演示)
+        <CardContent>
+          <form className="space-y-4">
+            <div className="grid gap-2">
+              <Label htmlFor="full-name">全名</Label>
+              <Input id="full-name" placeholder="张三" className="bg-background/50" />
             </div>
-          </div>
-          <div className="space-y-2">
-            <div className="h-10 w-full rounded-md border border-border bg-background/50 px-3 py-2 text-sm text-muted-foreground">
-              邮箱地址 (演示)
+            <div className="grid gap-2">
+              <Label htmlFor="email">邮箱地址</Label>
+              <Input id="email" type="email" placeholder="name@example.com" className="bg-background/50" />
             </div>
-          </div>
-          <div className="space-y-2">
-            <div className="h-10 w-full rounded-md border border-border bg-background/50 px-3 py-2 text-sm text-muted-foreground">
-              设置密码 (演示)
+            <div className="grid gap-2">
+              <Label htmlFor="password">设置密码</Label>
+              <Input id="password" type="password" placeholder="••••••••" className="bg-background/50" />
             </div>
-          </div>
-          <button className={buttonVariants({ className: "w-full h-11" })}>
-            注册
-          </button>
-          <div className="text-center text-sm text-muted-foreground">
+            <Button className="w-full h-11 text-base font-semibold shadow-sm mt-2">
+              注册
+            </Button>
+          </form>
+          <div className="text-center text-sm text-muted-foreground mt-6">
             已有账号？{" "}
             <Link href="/login" className="text-primary hover:underline font-medium">
               立即登录
