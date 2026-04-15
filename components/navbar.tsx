@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { LayoutDashboard, BookOpen, FileText, User, LogOut, Settings, CreditCard } from "lucide-react";
+import { LayoutGrid, BookOpen, FileText, User, LogOut, Settings, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { CornerPlus } from "@/components/ui/corner-plus";
 
 const navItems = [
-  { label: "工作台", href: "/workspace", icon: LayoutDashboard },
+  { label: "工作台", href: "/workspace", icon: LayoutGrid },
   { label: "题库", href: "/questions", icon: BookOpen },
   { label: "简历库", href: "/resumes", icon: FileText },
 ];
@@ -42,7 +42,7 @@ export function Navbar({ className }: { className?: string }) {
 
   return (
     <nav className={cn(
-      "fixed left-0 right-0 top-0 z-50 flex h-16 items-center justify-between border-b border-border/40 bg-white/5 dark:bg-black/5 px-4 shadow-sm backdrop-blur-2xl saturate-150 sm:px-6 lg:px-12 transition-all duration-300",
+      "fixed left-0 right-0 top-0 z-50 flex h-16 items-center justify-between border-b border-border/60 bg-background/80 pl-2 pr-2 shadow-sm backdrop-blur sm:pl-3 sm:pr-3 lg:pl-5 lg:pr-5 transition-all duration-300",
       className
     )}>
       {/* Corner Decorations */}
@@ -51,9 +51,9 @@ export function Navbar({ className }: { className?: string }) {
 
       {/* Left: Logo */}
       <div className="flex items-center">
-        <Link href="/" className="flex min-w-0 items-center gap-3 group">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <BrandMark className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105" priority />
-          <div className="flex min-w-0 items-center gap-2.5">
+          <div className="-ml-1 flex min-w-0 items-center gap-2.5">
             <BrandWordmark className="truncate text-[1.45rem] text-foreground/80" />
             <span className="hidden items-center gap-1.5 rounded-full border border-border/30 bg-background/35 px-2 py-0.5 text-[0.62rem] font-normal tracking-[0.06em] text-muted-foreground/80 shadow-sm backdrop-blur-sm xl:inline-flex">
               <span className="relative flex h-1.5 w-1.5 shrink-0">

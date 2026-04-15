@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard,
+  LayoutGrid,
   Calendar,
   FileText,
   BookOpen,
@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { CornerPlus } from "@/components/ui/corner-plus";
 
 const menuItems = [
-  { label: "概览", href: "/workspace", icon: LayoutDashboard },
+  { label: "概览", href: "/workspace", icon: LayoutGrid },
   { label: "计划安排", href: "/workspace/schedule", icon: Calendar },
   { label: "简历制作", href: "/workspace/resume", icon: FileText },
   { label: "刷题进度", href: "/workspace/questions", icon: BookOpen },

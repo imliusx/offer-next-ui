@@ -21,7 +21,7 @@ export default function Page() {
           </div>
 
           <h1 className="grid gap-2 text-3xl font-extrabold tracking-tight sm:gap-3 sm:text-5xl">
-            <span>简历优化</span>
+            <span>简历制作</span>
             <SectionWordmark className="text-2xl text-muted-foreground sm:text-4xl">
               Resume
             </SectionWordmark>
@@ -30,7 +30,7 @@ export default function Page() {
       </header>
 
       <div className="relative z-10 rounded-2xl border border-dashed border-border/60 bg-card/50 p-20 text-center backdrop-blur-xl">
-        <p className="text-muted-foreground">简历优化功能开发中...</p>
+        <p className="text-muted-foreground">简历制作功能开发中...</p>
       </div>
     </div>
   );
