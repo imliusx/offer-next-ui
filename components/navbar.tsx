@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Briefcase, LayoutDashboard, BookOpen, FileText, User, LogOut, ChevronDown, Settings, CreditCard } from "lucide-react";
+import { LayoutDashboard, BookOpen, FileText, User, LogOut, Settings, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { BrandMark } from "@/components/brand-mark";
+import { BrandWordmark } from "@/components/brand-wordmark";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -50,12 +52,8 @@ export function Navbar({ className }: { className?: string }) {
       {/* Left: Logo */}
       <div className="flex items-center">
         <Link href="/" className="flex min-w-0 items-center gap-3 group">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
-            <Briefcase className="h-4.5 w-4.5" />
-          </div>
-          <p className="truncate text-base font-bold tracking-tight">
-            Offer Next
-          </p>
+          <BrandMark className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105" priority />
+          <BrandWordmark className="truncate text-[1.65rem] text-foreground/80" />
         </Link>
       </div>
       

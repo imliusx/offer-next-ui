@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { SectionWordmark } from "@/components/section-wordmark";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -56,9 +57,9 @@ export default function OverviewPage() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background">
               <Activity className="h-4 w-4" />
             </div>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+            <SectionWordmark className="text-xs text-muted-foreground">
               Dashboard
-            </span>
+            </SectionWordmark>
             <div className="h-4 w-px bg-border/80" />
             <span className="text-xs text-muted-foreground">
               Preparation health monitoring
@@ -67,9 +68,9 @@ export default function OverviewPage() {
 
           <h1 className="grid gap-2 text-3xl font-extrabold tracking-tight sm:gap-3 sm:text-5xl">
             <span>准备状态概览</span>
-            <span className="text-muted-foreground uppercase text-2xl sm:text-4xl">
+            <SectionWordmark className="text-2xl text-muted-foreground sm:text-4xl">
               Overview
-            </span>
+            </SectionWordmark>
           </h1>
         </div>
 

@@ -1,7 +1,10 @@
-import { ArrowRight, Target, Zap, Clock, Repeat, Activity } from "lucide-react";
+import { ArrowRight, Target, Zap, Clock, Repeat } from "lucide-react";
 import Link from "next/link";
 
+import { BrandMark } from "@/components/brand-mark";
+import { BrandWordmark } from "@/components/brand-wordmark";
 import { Navbar } from "@/components/navbar";
+import { SectionWordmark } from "@/components/section-wordmark";
 import { buttonVariants } from "@/components/ui/button";
 
 const features = [
@@ -36,12 +39,8 @@ export default function Home() {
       <header className="relative z-10 mb-10 flex flex-col gap-8 lg:mb-14 lg:flex-row lg:items-end lg:justify-between" id="overview">
         <div className="max-w-3xl">
           <div className="mb-4 flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background">
-              <Activity className="h-4 w-4" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
-              Offer Next
-            </span>
+            <BrandMark className="h-12 w-12 shrink-0 rounded-lg" priority />
+            <BrandWordmark className="text-lg text-muted-foreground/75 sm:text-xl" />
             <div className="h-4 w-px bg-border/80" />
             <span className="text-xs text-muted-foreground">
               超级大脑，面试必备
@@ -50,9 +49,9 @@ export default function Home() {
 
           <h1 className="grid gap-2 text-4xl font-extrabold tracking-tight sm:gap-3 sm:text-6xl">
             <span>你的面试准备</span>
-            <span className="text-muted-foreground uppercase text-3xl sm:text-5xl">
+            <SectionWordmark className="text-3xl text-muted-foreground sm:text-5xl">
               Interview Prep
-            </span>
+            </SectionWordmark>
           </h1>
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">

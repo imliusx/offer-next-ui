@@ -1,5 +1,8 @@
-import { Briefcase, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+
+import { BrandMark } from "@/components/brand-mark";
+import { BrandWordmark } from "@/components/brand-wordmark";
 import { buttonVariants, Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -18,12 +21,12 @@ export default function RegisterPage() {
 
       <Card className="w-full max-w-md bg-card/50 backdrop-blur-xl border-border/60 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <CardHeader className="text-center space-y-4">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-            <Briefcase className="h-6 w-6" />
-          </div>
+          <BrandMark className="mx-auto h-20 w-20 rounded-2xl" priority />
           <div className="space-y-1">
             <CardTitle className="text-2xl font-bold tracking-tight">开启面试加速</CardTitle>
-            <CardDescription>创建一个 Offer Next 账号</CardDescription>
+            <CardDescription>
+              创建一个 <BrandWordmark className="text-[1.05em] text-foreground/70" /> 账号
+            </CardDescription>
           </div>
         </CardHeader>
         <CardContent>

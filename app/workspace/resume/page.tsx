@@ -1,5 +1,7 @@
 import { FileText } from "lucide-react";
 
+import { SectionWordmark } from "@/components/section-wordmark";
+
 export default function Page() {
   return (
     <div className="space-y-10">
@@ -9,9 +11,9 @@ export default function Page() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background">
               <FileText className="h-4 w-4" />
             </div>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+            <SectionWordmark className="text-xs text-muted-foreground">
               Resume
-            </span>
+            </SectionWordmark>
             <div className="h-4 w-px bg-border/80" />
             <span className="text-xs text-muted-foreground">
               个人简历的编写和制作，围绕项目亮点和关键词完善表达
@@ -20,9 +22,9 @@ export default function Page() {
 
           <h1 className="grid gap-2 text-3xl font-extrabold tracking-tight sm:gap-3 sm:text-5xl">
             <span>简历优化</span>
-            <span className="text-muted-foreground uppercase text-2xl sm:text-4xl">
+            <SectionWordmark className="text-2xl text-muted-foreground sm:text-4xl">
               Resume
-            </span>
+            </SectionWordmark>
           </h1>
         </div>
       </header>
