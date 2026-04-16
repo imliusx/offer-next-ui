@@ -56,8 +56,8 @@ export function Navbar({ className }: { className?: string }) {
         <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <BrandMark className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105" priority />
           <div className="-ml-1 flex min-w-0 items-center gap-2.5">
-            <div className="min-w-0">
-              <BrandWordmark className="truncate text-[1.32rem] text-foreground/80" />
+            <div className="min-w-0 text-center">
+              <BrandWordmark className="truncate text-[1.22rem] text-foreground/80" />
               <span className="-mt-2.5 block truncate text-[0.52rem] font-medium uppercase tracking-[0.28em] text-muted-foreground/75">
                 OFFER NEXT
               </span>

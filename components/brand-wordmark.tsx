@@ -12,7 +12,7 @@ export function BrandWordmark({className}: BrandWordmarkProps) {
         className
       )}
     >
-      伴职猫
+      面试猫
     </span>
   );
 }
