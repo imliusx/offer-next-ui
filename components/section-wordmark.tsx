@@ -12,7 +12,7 @@ export function SectionWordmark({
   return (
     <span
       className={cn(
-        "font-brand-wordmark inline-block font-light leading-[0.9] tracking-[0.12em] antialiased",
+        "inline-block font-light leading-[0.9] tracking-[0.12em] antialiased",
         className
       )}
     >

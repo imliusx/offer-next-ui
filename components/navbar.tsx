@@ -56,7 +56,12 @@ export function Navbar({ className }: { className?: string }) {
         <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <BrandMark className="h-14 w-14 shrink-0 transition-transform group-hover:scale-105" priority />
           <div className="-ml-1 flex min-w-0 items-center gap-2.5">
-            <BrandWordmark className="truncate text-[1.45rem] text-foreground/80" />
+            <div className="min-w-0">
+              <BrandWordmark className="truncate text-[1.32rem] text-foreground/80" />
+              <span className="-mt-2.5 block truncate text-[0.52rem] font-medium uppercase tracking-[0.28em] text-muted-foreground/75">
+                OFFER NEXT
+              </span>
+            </div>
             <span className="hidden items-center gap-1.5 rounded-full border border-border/30 bg-background/35 px-2 py-0.5 text-[0.62rem] font-normal tracking-[0.06em] text-muted-foreground/80 shadow-sm backdrop-blur-sm xl:inline-flex">
               <span className="relative flex h-1.5 w-1.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -78,7 +83,7 @@ export function Navbar({ className }: { className?: string }) {
               key={item.label}
               href={item.href}
               className={cn(
-                "inline-flex h-9 items-center gap-2 rounded-md px-4 text-sm font-medium transition-all hover:bg-muted/40",
+                "inline-flex h-9 items-center gap-2 rounded-md px-4 text-sm font-medium transition-all hover:bg-foreground/[0.045] dark:hover:bg-foreground/[0.08]",
                 isActive 
                   ? "bg-primary/10 text-primary shadow-[inset_0_0_0_1px_rgba(var(--primary),0.1)]" 
                   : "text-muted-foreground hover:text-foreground hover:translate-y-[-1px]"

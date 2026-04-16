@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from "next/font/google";
 import type {ReactNode} from "react";
 
 import {ThemeProvider} from "@/components/theme-provider";
+import "@chinese-fonts/jhlst/dist/京華老宋体v2_002/result.css";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,14 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
       >

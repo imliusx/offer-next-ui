@@ -150,7 +150,7 @@
 
 @layer utilities {
   .font-brand-wordmark {
-    font-family: "Saira Stencil", sans-serif;
+    font-family: "KingHwa_OldSong", "Noto Serif SC", serif;
     font-optical-sizing: auto;
   }
 }
